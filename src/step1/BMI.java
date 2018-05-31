@@ -1,5 +1,4 @@
 package step1;
-
 import java.util.Scanner;
 /**
 BMI = 체중/(키*키)
