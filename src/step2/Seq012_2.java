@@ -4,10 +4,33 @@ package step2;
 import java.util.Scanner;
 
 /**
- * [수열012] 홀수, 짝수의 합
+ * [수열012] 홀수, 짝수의 합(메소드분할)
  */
 
-public class Seq012 {
+public class Seq012_2 {
+	public static int[] input(Scanner s) {
+		int[] result = new int[2];
+		System.out.println("First Value");
+		int num1 = s.nextInt();
+		System.out.println("Second Value");
+		int num2 = s.nextInt();
+
+		int start = 0;
+		int end = 0;
+		if (num1 > num2) {
+			start = num2;
+			end = num1;
+		} else {
+			start = num1;
+			end = num2;
+		}
+		
+		result[0] = start;
+		result[1] = end;
+		
+		return result;
+	}
+	
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		while (true) {
@@ -16,27 +39,13 @@ public class Seq012 {
 			case 0:
 				return;
 			case 1:
-				System.out.println("First Value");
-				int num1 = s.nextInt();
-				System.out.println("Second Value");
-				int num2 = s.nextInt();
-
-				int start = 0;
-				int end = 0;
-				if (num1 > num2) {
-					start = num2;
-					end = num1;
-				} else {
-					start = num1;
-					end = num2;
-				}
-
-				String result = "";
-				String op = "";
-				int sum = 0;
-				int count = 0;
-				int tcount = 0;
-
+				//
+				int[] arr = input(s);
+				int start = arr[0], end = arr[1];
+				
+				String result = "", op = "";
+				int sum = 0, count = 0, tcount = 0;
+				
 				for (int i = start; i <= end; i++) {
 					if (i % 2 == 1) {
 						tcount++;
@@ -58,19 +67,10 @@ public class Seq012 {
 				System.out.println(result + sum);
 				break;
 			case 2:
-				System.out.println("First Number?");
-				num1 = s.nextInt();
-				System.out.println("Second Number?");
-				num2 = s.nextInt();
-
-				if (num1 > num2) {
-					start = num2;
-					end = num1;
-				} else {
-					start = num1;
-					end = num2;
-				}
-
+				//
+				arr = input(s);
+				start = arr[0];
+				end = arr[1];
 				sum = 0;
 				count = 0;
 				tcount = 0;
@@ -82,7 +82,6 @@ public class Seq012 {
 						tcount++;
 					}
 				}
-				
 				count = 0;
 				for (int i = start; i <= end; i++) {
 					if (i % 2 == 0) {
