@@ -30,7 +30,7 @@ public class Snail {
 		}
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
-				System.out.print(mtx[i][j]+" ");
+				System.out.printf("%02d ",mtx[i][j]);
 			}
 			System.out.println();
 		}
